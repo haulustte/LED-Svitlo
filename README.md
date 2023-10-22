@@ -1,5 +1,7 @@
 # **Client application for LED Svitlo illumination solution**
 
+Download <a href="https://github.com/haulustte/LED-Svitlo/releases/ledsvitlo.apk">ledsvitlo_v1.0.0.apk</a>
+
 ![alt text](https://github.com/haulustte/LED-Svitlo/blob/master/screenshot.png?raw=true)
 
 
