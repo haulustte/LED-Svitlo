@@ -150,26 +150,26 @@ class MainActivity : AppCompatActivity() {
         object : AsyncTask<Void?, Void?, Void?>() {
             override fun doInBackground(vararg p0: Void?): Void? {
                 while (true) {
-                    if (!continueReceivingTempAndVoltageData) continue
-                    val receivedTemperatureData: ArrayList<String> =
-                        UDPClient.clientNeedToReceiveData(this@MainActivity, GET_TEMP)
-                    val receivedVoltageData: ArrayList<String> =
-                        UDPClient.clientNeedToReceiveData(this@MainActivity, GET_ADC_DATA_V)
-                    //Log.i(LOG_TAG, "data received");
-                    if (receivedTemperatureData == null) continue
-                    if (receivedVoltageData == null) continue
-                    val temperatureData: String =
-                        Parcer.parseString(receivedTemperatureData, Constants.CODE_TEMPERATURE)
-                    val voltageData: String =
-                        Parcer.parseString(receivedVoltageData, Constants.CODE_VOLTAGE)
-                    mActivity!!.runOnUiThread {
-                        temperatureTextView =
-                            mActivity!!.findViewById(R.id.temperature_textview) as TextView
-                        voltageTextView =
-                            mActivity!!.findViewById(R.id.voltage_textview) as TextView
-                        temperatureTextView!!.setText(Constants.TEXT_TEMPERATURE + temperatureData)
-                        voltageTextView!!.setText(Constants.TEXT_VOLTAGE + voltageData)
-                    }
+//                    if (!continueReceivingTempAndVoltageData) continue
+//                    val receivedTemperatureData: ArrayList<String> =
+//                        UDPClient.clientNeedToReceiveData(this@MainActivity, GET_TEMP)
+//                    val receivedVoltageData: ArrayList<String> =
+//                        UDPClient.clientNeedToReceiveData(this@MainActivity, GET_ADC_DATA_V)
+//                    //Log.i(LOG_TAG, "data received");
+//                    if (receivedTemperatureData == null) continue
+//                    if (receivedVoltageData == null) continue
+//                    val temperatureData: String =
+//                        Parcer.parseString(receivedTemperatureData, Constants.CODE_TEMPERATURE)
+//                    val voltageData: String =
+//                        Parcer.parseString(receivedVoltageData, Constants.CODE_VOLTAGE)
+//                    mActivity!!.runOnUiThread {
+//                        temperatureTextView =
+//                            mActivity!!.findViewById(R.id.temperature_textview) as TextView
+//                        voltageTextView =
+//                            mActivity!!.findViewById(R.id.voltage_textview) as TextView
+//                        temperatureTextView!!.setText(Constants.TEXT_TEMPERATURE + temperatureData)
+//                        voltageTextView!!.setText(Constants.TEXT_VOLTAGE + voltageData)
+//                    }
                     try {
                         Thread.sleep(2000)
                     } catch (e: InterruptedException) {

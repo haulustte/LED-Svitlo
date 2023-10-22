@@ -75,22 +75,12 @@ public class UDPClient {
                     byte[] bytes = receivePacket.getData();
                     String newSentence = new String(bytes, "UTF-8") + "\n";
                     unformattedStrings.add(newSentence);
-                    //modifiedSentence += newSentence;
-                    //Log.i(LOG_TAG, String.valueOf(System.currentTimeMillis() <= beginTime + TIMEOUT));
                     break;
                 }
                 byte[] bytes = receivePacket.getData();
                 String newSentence = new String(bytes, "UTF-8") + "\n";
                 unformattedStrings.add(newSentence);
-                //modifiedSentence += newSentence;
-                //Log.i(LOG_TAG, String.valueOf(System.currentTimeMillis() <= beginTime + TIMEOUT));
             }
-            //Log.i(LOG_TAG, "finish");
-            ArrayList<String> formattedStrings = formatReceivedData(unformattedStrings);
-
-            //Log.i(LOG_TAG, String.valueOf(formattedStrings));
-
-
             client_socket.close();
             return unformattedStrings;
         } catch (UnknownHostException e) {
@@ -102,22 +92,18 @@ public class UDPClient {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return new ArrayList<>();
     }
 
     public static void client(Context context, final String str) {
 
         if (isProcessing) return;
 
-
-
         isProcessing = true;
-
 
         SharedPreferences sharedPreferences = context.getSharedPreferences("main_sp", MODE_PRIVATE);
         final String ip = sharedPreferences.getString("ip", "0.0.0.0");
         final int port = sharedPreferences.getInt("port",0);
-
 
         if (ip.equals("0.0.0.0") || port == 0) return;
 

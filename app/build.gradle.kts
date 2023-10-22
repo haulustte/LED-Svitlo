@@ -50,8 +50,9 @@ dependencies {
 
     implementation("com.google.android.material:material:1.10.0")
 
-    val appcompat_version = "1.6.1"
 
-    implementation("androidx.appcompat:appcompat:$appcompat_version")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+
+    implementation("androidx.compose.runtime:runtime:1.6.0-alpha08")
 
 }
