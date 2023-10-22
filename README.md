@@ -1,6 +1,6 @@
 # **Client application for LED Svitlo illumination solution**
 
-
+![alt text](https://github.com/haulustte/LED-Svitlo/blob/master/screenshot.png?raw=true)
 
 
 **Main features:** 
